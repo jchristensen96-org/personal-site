@@ -1,0 +1,237 @@
+/* CSS for the card container */
+.side-container {
+  max-width: 350px;
+  margin-top: 50px;
+  overflow: hidden;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+}
+
+/* CSS for the header */
+.side-header {
+  text-align: center;
+  padding-bottom: 30px;
+  background-color: #fff;
+}
+
+.side-header-name {
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+  margin-bottom: 10px;
+}
+
+.side-header-email {
+  font-family: Inter;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+}
+
+/* CSS for the profile picture */
+.side-header img {
+  width: 85px;
+  height: 85px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* CSS for the body and other elements */
+.side-body {
+  background-color: #758595;
+  color: #fff;
+}
+
+.side-body-info {
+  padding: 15px;
+  padding-top: 30px;
+}
+
+.side-body-info td {
+  padding-bottom: 5px;
+}
+
+.info-category {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.8rem;
+  padding-left: 10px;
+  padding-right: 80px;
+  letter-spacing: 0.05rem;
+}
+
+.info-info {
+  font-family: Inter;
+  font-weight: 200;
+  opacity: 80%;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+}
+
+.side-divide {
+  width: 90%;
+  margin: auto;
+}
+
+.side-body-about {
+  padding: 25px;
+  padding-bottom: 40px;
+}
+
+.side-body-about h3 {
+  font-family: Inter;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  margin-bottom: 15px;
+}
+
+.side-body-about p {
+  font-family: Inter;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.side-button {
+  font-size: 0.7rem;
+  font-family: Inter;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: #ededed;
+  color: #202020;
+  padding: 14px 28px 14px 28px;
+}
+
+.side-download-cv {
+  padding: 25px;
+  padding-bottom: 40px;
+  font-size: 0.8rem;
+  font-family: Inter;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.side-download-cv a:active,
+.side-download-cv a:visited {
+  color: white
+}
+
+.copyright {
+  font-family: Inter;
+  letter-spacing: 0.05rem;
+  font-size: 0.6rem;
+  color: #202020;
+  opacity: 35%;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+  .side-container {
+    max-width: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  }
+
+  .side-header img {
+    width: 150px;
+    height: 150px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .side-header-name {
+    font-size: 1.5rem;
+  }
+
+  .side-body-info table {
+    padding-left: 25px;
+  }
+
+  .side-body-about {
+    padding-left: 50px;
+  }
+
+  .side-download-cv {
+    padding-left: 50px;
+  }
+
+  .info-category {
+    padding-right: 100px;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .side-header-name {
+    font-size: 1.5rem;
+  }
+
+  .side-body-info table {
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  .side-body-about {
+    padding-left: 50px;
+    text-align: center;
+  }
+
+  .side-download-cv {
+    padding-left: 50px;
+    text-align: center;
+  }
+
+  .info-category {
+    padding-right: 100px;
+  }
+
+  .side-body-about {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .side-body-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .side-download-cv {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .info-category {
+    padding-right: 40px;
+  }
+
+  .copyright {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .side-container {
+    border-radius: 0;
+  }
+
+  .side-header-name {
+    font-size: 1.2rem;
+  }
+
+  .side-header-email {
+    font-size: 0.9rem;
+  }
+
+  .side-body-about p {
+    font-size: 0.8rem;
+  }
+}
