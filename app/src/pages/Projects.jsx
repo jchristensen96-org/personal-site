@@ -29,7 +29,8 @@ const Projects = () => (
           </div>
           <div className="project-container">
             <div className="project-title-container">
-              <h3>DEVOPS PROJECT 2: (This site)</h3>
+              <a href="https://github.com/jchristensen96-org/personal-site" target="_blank"><h3>DEVOPS PROJECT 2: (This site)</h3></a>
+              <p>September 2023</p>
             </div>
             <div className="project-image-container">
               <img src="https://jc-ecom-app-images-209328912.s3.amazonaws.com/images/project/3RLxJvekC463yogYTb.png" alt="" />
