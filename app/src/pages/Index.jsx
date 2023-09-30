@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/App.css";
 
+
 import Navigation from "../components/Navigation/Navigation";
 import Side from "../components/Side/Side";
 
@@ -14,24 +15,15 @@ const Index = () => (
       </div>
       <div className="page-card">
         <div className="title">
-          <h2>ABOUT THIS SITE</h2>
+          <h2>WELCOME</h2>
           <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          This site serves as a hub to display my recent&#20;
+          <Link to="/projects" className="index-link-text">projects</Link> 
+          &#20;and an up to date <Link to="/resume" className="index-link-text">resume</Link> 
+          &#20;and <Link to="/contact" className="index-link-text">contact</Link> information.
+          Feel free to also take a look at my <a target="_blank" href="https://github.com/JChristensen96">GitHub</a> 
+          &#20;and <a target="_blank" href="https://gitlab.com/JChristensen96">GitLab</a>.
           </p>
-        </div>
-        <hr className="page-divide" />
-        <div className="index-content">
-          <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur.
-          </p>
-          <div className="index-links">
-            <Link className="index-link" to="/resume">VIEW RESUME</Link>
-            <Link className="index-link" to="/projects">SEE PROJECTS</Link>
-          </div>
         </div>
       </div>
     </div>

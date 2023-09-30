@@ -7,28 +7,32 @@
 
 .page {
   min-height: 100vh;
-  background-color: #e7e7e7;
+  background-color: #d9d9d9;
 }
 
 .main-content {
   display: flex;
-  flex-wrap: wrap; /* Allow flex items to wrap to a new line */
-  max-width: 1100px;
+  flex-wrap: wrap;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .side-component {
-  flex: 0 0 350px; /* Set a fixed width for the Side component */
-  margin-right: 20px; /* Add some space between the Side and page-card */
+  flex: 0 0 400px;
+  margin-right: 20px;
 }
 
 .page-card {
-  background-color: #fff;
+  background-color: #ffffffd4;
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 25px;
   overflow: hidden;
   flex: 1;
   align-self: flex-start;
+  border-radius: 8px;
+  border: 1px solid rgba(146, 146, 146, 0.598);
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 
 .copyright {
@@ -36,26 +40,43 @@
 }
 
 .title {
-  font-family: Inter;
-  letter-spacing: 0.15rem;
   margin-bottom: 10px;
   padding: 50px;
-  padding-top: 90px;
-  padding-bottom: 25px;
 }
 
 .title h2 {
-  font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-weight: 6700;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
 }
 
-.title p {
+.title p,
+.title p a {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
   font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-transform: uppercase;
+}
+
+.title p a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+  transition: 0.2s;
+}
+
+.title p a:hover {
+  color: #758595 !important;;
+  cursor: pointer;
+  border-bottom: 1px solid #758595;
+}
+
+.title p a:visited,
+.title p a:active {
+  color: black;
 }
 
 .page-divide {
@@ -111,8 +132,8 @@
 .resume-experience h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: Inter;
-  font-weight: 300;
+  font-family: 'Trirong', serif;
+  font-weight: 400;
   color: #383838;
   margin-bottom: 30px;
 }
@@ -138,16 +159,17 @@
 .experience-company {
   line-height: 1.4;
   font-weight: 300;
-  color: #383838;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
 }
 
 .resume-content ul li {
-  margin-top: 20px;
+  margin-top: 15px;
   margin-left: 20px;
   margin-right: 30px;
-  color: #383838;
   font-weight: 300;
-  opacity: 80%;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* RESUME EDUCATION */
@@ -155,10 +177,10 @@
 .resume-education h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: Inter;
-  font-weight: 300;
+  font-family: 'Trirong', serif;
+  font-weight: 400;
   color: #383838;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 .education-degree {
@@ -178,30 +200,19 @@
 .resume-certs h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: Inter;
-  font-weight: 300;
+  font-family: 'Trirong', serif;
+  font-weight: 400;
   color: #383838;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 20px;
 }
 
 .resume-certs p {
-  color: #383838;
   font-weight: 300;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
   margin-top: 10px;
   letter-spacing: 0.05rem;
-}
-
-/* RESUME SKILLS */
-
-.resume-skills h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: Inter;
-  font-weight: 300;
-  color: #383838;
-  margin-top: 70px;
-  margin-bottom: 30px;
 }
 
 /* PROJECTS */
@@ -298,6 +309,53 @@
   padding: 14px 28px 14px 28px;
 }
 
+.contact-title {
+  margin-bottom: 0;
+  padding-bottom: 40px;
+}
+
+.contact-content p {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  font-weight: 300;
+}
+
+.contact-email {
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  font-weight: 300;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+  border-bottom: none;
+}
+
+.contact-email:hover {
+  border-bottom: 0.7px solid black;
+}
+
+.contact-icon-container {
+  margin-left: 50px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.416);
+  text-decoration: none;
+  margin-right: 12px;
+  transition: 0.2s;
+}
+
+.contact-icon:hover {
+  color:#000000;
+}
+
 @media screen and (max-width: 1280px) {
   .main-content {
     flex-direction: column;
@@ -355,7 +413,6 @@
   /* CONTACT */
 
   .contact-title {
-    /* padding: 20px; */
     margin-bottom: 0;
   }
 }

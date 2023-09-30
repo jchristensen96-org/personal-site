@@ -1,38 +1,51 @@
 /* CSS for the card container */
 .side-container {
-  max-width: 350px;
+  max-width: 450px;
   margin-top: 50px;
   overflow: hidden;
   border-radius: 8px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  border: 1px solid rgba(146, 146, 146, 0.598);
 }
 
 /* CSS for the header */
 .side-header {
   text-align: center;
-  padding-bottom: 30px;
-  background-color: #fff;
+  padding-bottom: 20px;
+  background-color: #ffffffd4;
 }
 
 .side-header-name {
-  font-family: Inter;
-  font-weight: 400;
-  letter-spacing: 0.15rem;
-  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 0.07rem;
+  margin-bottom: 5px;
 }
 
 .side-header-email {
-  font-family: Inter;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
   letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: rgba(78, 78, 78, 0.845);
+  padding-bottom: 2px;
+  border-bottom: 0.7px solid rgba(62, 62, 62, 0.383);
+  transition: 0.1s;
+  text-transform: uppercase;
+}
+
+.side-header-email:hover {
+  cursor: pointer;
+  border-bottom: 0.7px solid black;
 }
 
 /* CSS for the profile picture */
 .side-header img {
-  width: 85px;
-  height: 85px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  width: 175x;
+  height: 175px;
+  margin-top: 35px;
+  margin-bottom: 10px;
 }
 
 /* CSS for the body and other elements */
@@ -44,26 +57,23 @@
 .side-body-info {
   padding: 15px;
   padding-top: 30px;
-}
-
-.side-body-info td {
-  padding-bottom: 5px;
+  line-height: 1.7;
 }
 
 .info-category {
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   padding-left: 10px;
   padding-right: 80px;
   letter-spacing: 0.05rem;
 }
 
 .info-info {
-  font-family: Inter;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   opacity: 80%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.05rem;
 }
 
@@ -78,51 +88,105 @@
 }
 
 .side-body-about h3 {
-  font-family: Inter;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffffe3;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
 }
 
 .side-body-about p {
-  font-family: Inter;
+  font-family: 'Trirong', serif;
+  color: #ffffffc9;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  letter-spacing: 0.04rem;
   line-height: 1.7;
   margin-bottom: 30px;
 }
 
 .side-button {
-  font-size: 0.7rem;
-  font-family: Inter;
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  letter-spacing: 0.04rem;
   text-decoration: none;
   background-color: #ededed;
   color: #202020;
-  padding: 14px 28px 14px 28px;
+  padding: 13px 22px;
+  border: none;
+  transition: 0.2s;
+}
+
+.side-button:hover {
+  background-color: #ffffff;
 }
 
 .side-download-cv {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   padding: 25px;
-  padding-bottom: 40px;
-  font-size: 0.8rem;
-  font-family: Inter;
-  font-weight: 300;
-  letter-spacing: 0.1rem;
+  padding-bottom: 30px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+}
+
+.side-download-cv a {
+  text-decoration: none;
+  color: #ffffffb0;
+  border-bottom: 1px solid #ffffffb0;
+  transition: 0.2s;
+}
+
+.side-download-cv a:hover {
+  cursor: pointer;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .side-download-cv a:active,
 .side-download-cv a:visited {
-  color: white
+  color: white;
+}
+
+.social-icon-container {
+  margin-left: 25px;
+  background-color: #758595 !important;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.social-icon {
+  margin-right: 12px;
+}
+
+.email {
+  margin-top: 1px;
+}
+
+.social-icon,
+.social-icon:active,
+.social-icon:visited {
+  font-size: 1.3rem;
+  color: #ffffffb0;
+  transition: 0.2s;
+}
+
+.social-icon:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .copyright {
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   letter-spacing: 0.05rem;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: #202020;
-  opacity: 35%;
+  opacity: 50%;
   margin-top: 50px;
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1280px) {

@@ -19,7 +19,7 @@ const Resume = () => (
         <hr className="page-divide" />
         <div className="resume-content">
           <div className="resume-experience">
-            <h2>EXPERIENCE</h2>
+            <h2>WORK EXPERIENCE</h2>
             <h3>DELTA MODTECH - IT SPECIALIST</h3>
             <p className="experience-date">March 2021 – Present</p>
             <p className="experience-company">
@@ -31,34 +31,44 @@ const Resume = () => (
             </p>
             <ul>
               <li>
-                Implemented and maintained robust network infrastructure,
-                ensuring uninterrupted connectivity.
+                Ensure the continuous availability of business critical systems
+                by maintaining a robust network infrastructure, providing
+                uninterrupted connectivity for a user base of 250+ employees
+                across multiple locations.
               </li>
               <li>
-                Conducted regular security audits and vulnerability assessments,
-                implementing necessary patches and updates, resulting in a 30%
-                decrease in cybersecurity incidents.
+                Improved network visibility through the deployment of ELK stack
+                for log collection, Prometheus + Grafana for server metrics, and
+                PRTG for downtime alerts.
               </li>
               <li>
-                Collaborated with cross-functional teams to design and implement
-                a disaster recovery plan, ensuring minimal data loss and
-                achieving a recovery time objective of under 2 hours.
+                Introduced a local GitLab server with a dedicated runner to
+                optimize version control and automated testing.
               </li>
               <li>
-                Managed and supported a diverse range of software applications,
-                providing timely technical assistance to over 200 employees as
-                well as customers.
-              </li>
-              <li>
-                Spearheaded the design and deployment of Infrastructure
-                Monitoring tools such as a dockerized ELK stack deployment to
-                centralize log collection from network devices and a Prometheus
-                + Grafana deployment for gathering systems metrics.
-              </li>
-              <li>
-                Led the end-to-end setup and configuration of a GitLab version
-                control server, enabling the adoption of a centralized and
-                version-controlled development workflow across the organization.
+                Led the transition from an insecure infrastructure with poor
+                security practices to a security-compliant environment,
+                achieving this transformation by:
+                <ul>
+                  <li>
+                    Creation of Disaster Recovery, Incident Response, & Business Continuity plans.
+                  </li>
+                  <li>
+                    Implementation of network access controls via 802.1x &
+                    RADIUS.
+                  </li>
+                  <li>
+                    Reworking IAM to enforce the principle of least privilege.
+                  </li>
+                  <li>
+                    Ensuring system and software integrity through regular updates, patch management, and the timely
+                    replacement of unsupported systems.
+                  </li>
+                  <li>
+                    Training non-technical staff on cyber security awareness and
+                    best practices.
+                  </li>
+                </ul>
               </li>
             </ul>
             <h3>MARQUIS YACHTS - NETWORK ADMINISTRATOR</h3>
@@ -69,14 +79,16 @@ const Resume = () => (
             </p>
             <ul>
               <li>
-                Installed/programed/maintained networking infrastructure during
-                a building move performing copper and fiber runs and
-                termination, configuring routers, switches, company wireless,
-                visitor wireless
+                Solely administered a Microsoft Windows Server network of 15+
+                servers, ensuring the uninterrupted availability of critical
+                network services after a rapid transition from the previous
+                administrator.
               </li>
-              <li>Maintained firewall security and VPN security</li>
               <li>
-                Administered a Microsoft Windows Server network of servers
+                Led the installation and maintenance of networking
+                infrastructure, including copper and fiber runs, termination,
+                routers, switches, and wireless systems during a relocation to a
+                new facility.
               </li>
             </ul>
           </div>

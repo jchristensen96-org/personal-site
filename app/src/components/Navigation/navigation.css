@@ -11,7 +11,7 @@
 }
 
 .page-container {
-  width: 1200px;
+  width: 1350px;
 }
 
 .nav-container {
@@ -23,21 +23,28 @@
 }
 
 .nav-logo {
-  font-family: Inter;
-  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
+  font-weight: 400;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.1rem;
-  letter-spacing: 0.15rem;
+  font-size: 1rem;
+  letter-spacing: 0.12rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.2s;
+}
+
+.nav-logo:hover {
+  /* color: rgba(255, 255, 255, 0.787); */
+  border-bottom: 1px solid white;
 }
 
 .nav-divide {
   border-left: 1px solid #000000;
   opacity: 0.15;
   height: 45px;
-  margin-left: 25px;
+  margin-left: 20px;
 }
 
 .nav-menu {
@@ -48,19 +55,25 @@
 }
 
 .nav-links {
-  font-family: Inter;
-  font-weight: 300;
-  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 0.08rem;
+  font-size: 1rem;
   text-decoration: none;
-  margin-left: 25px;
+  margin-left: 20px;
   height: 100%;
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: 0.2s;
 }
 
 .nav-item {
   line-height: 40px;
-  margin-right: 0.3rem;
+  margin-right: 0.1rem;
+}
+
+.nav-links:hover {
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .hamburger-menu {
