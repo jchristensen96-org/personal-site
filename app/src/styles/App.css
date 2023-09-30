@@ -44,7 +44,6 @@
 }
 
 .title {
-  margin-bottom: 10px;
   padding: 50px;
 }
 
@@ -129,16 +128,20 @@
 
 .resume-experience h3 {
   font-size: 1.2rem;
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: #383838;
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
+.experience-heading {
+  margin-top: 40px !important;
+}
+
 .experience-date {
   font-size: 1rem;
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #383838;
   opacity: 50%;
@@ -148,10 +151,11 @@
 .experience-company {
   line-height: 1.5;
   font-size: 1.1rem;
-  font-weight: 300;
-  color: #000000;
-  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  color: #0000008e;
   letter-spacing: 0.1px;
+  font-family: 'Trirong', serif;
+  font-style: italic;
 }
 
 .resume-content ul li {
@@ -203,22 +207,36 @@
   margin-bottom: 20px;
 }
 
-.resume-certs p {
-  font-weight: 300;
+.cert-link {
+  margin-top: 10px;
+}
+
+.cert-link a {
+  font-weight: 400;
   color: #000000;
   font-family: 'Roboto', sans-serif;
-  margin-top: 10px;
   letter-spacing: 0.05rem;
+  text-decoration: none;
+  border-bottom: 0.7px solid rgba(0, 0, 0, 0);
+  transition: 0.2s;
+}
+
+.cert-link a:hover {
+  border-bottom: 0.7px solid black;
 }
 
 /* PROJECTS */
 
 .project-content {
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-container {
   margin-top: 30px;
+  max-width: 800px;
 }
 
 .project-title-container {
@@ -232,7 +250,8 @@
 .project-title-container h3 {
   margin-left: 20px;
   font-size: 1rem;
-  font-family: Inter;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
   font-weight: 400;
   color: #383838;
 }
@@ -361,16 +380,18 @@
 
   .side-component {
     order: 2;
-    margin-left: 20px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .contact-card {
-    /* width: calc(100% - 40px); */
+  .contact-card,
+  .page-card {
     width: 100% !important;
-    margin: 20px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .contact-title {
+  .title {
     text-align: center;
   }
 
@@ -379,11 +400,6 @@
     margin-top: 30px;
     justify-content: center;
   }
-
-  /* .page-card {
-    margin-left: 20px;
-    margin-right: 20px;
-  } */
 
   /* CONTACT */
 
@@ -405,6 +421,18 @@
   .side-component {
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  .title {
+    padding-bottom: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .resume-content {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -431,11 +459,27 @@
   .title p a {
     font-size: 1rem;
   }
+
+  .resume-title p {
+    font-size: 1.3rem;
+  }
+
+  .resume-headings h2{
+    font-size: 1.2rem;
+  }
+
+  .resume-headings h3{
+    font-size: 1rem;
+  }
   
   /* CONTACT */
 
   .contact-title {
     margin-bottom: 0;
+  }
+
+  .contact-email {
+    font-size: 1rem;
   }
 }
 
@@ -452,22 +496,18 @@
     padding: 20px;
   }
 
-  .resume-experience h2 {
-    font-size: 1.2rem;
-  }
-
-  .resume-experience h3 {
-    font-size: 0.9rem;
-  }
-
   .experience-company {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .resume-content ul li {
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 15px;
+    font-size: 1rem;
+  }
+
+  .cert-link a {
     font-size: 0.9rem;
   }
 
@@ -479,10 +519,10 @@
   }
 
   .education-degree {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .education-school {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   /* RESUME CERTS */
@@ -494,13 +534,6 @@
 
   .resume-certs p {
     font-size: 0.75rem;
-  }
-
-  /* RESUME SKILLS */
-
-  .resume-skills h2 {
-    font-size: 1.2rem;
-    margin-top: 40px;
   }
 
   /* PROJECTS */
@@ -517,11 +550,27 @@
   }
 
   .contact-card {
-    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+
+}
+
+@media screen and (max-width: 380px){
+  .resume-title p {
+    font-size: 1rem;
+  }
+  .resume-title {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (max-width: 340px) {
+  .main-content {
+    max-width: 95vw;
+  }
   .title h2 {
     font-size: 2rem;
   }
@@ -550,9 +599,7 @@
     margin-top: 20px;
   }
 
-  .contact-card {
-    width: 100%;
-  }
+
 }
 
 @media screen and (max-width: 290px) {

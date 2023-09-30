@@ -42,22 +42,20 @@ const Side = () => {
           </div>
           <hr className="side-divide" />
           <div className="side-body-about">
-            <h3>ABOUT</h3>
+            <h3>ABOUT ME</h3>
             <p>
-              Welcome to my resume website! My name is Jon Christensen and I am
-              an IT specialist with experience in designing and deploying
-              advanced infrastructure solutions and leading transformative
-              security initiatives.
+              My name is Jon Christensen. I have 3+ years of experience working
+              as an IT administrator. I'm a passionate learner with diverse
+              interests ranging from technology and finance to film, philosophy,
+              religion, and history. When I'm not working or studying,
+              I enjoy doing anything with family and friends.
             </p>
-            <Link className="side-button" to="/resume">
-              LEARN MORE
-            </Link>
           </div>
           <hr className="side-divide" />
           <div className="side-download-cv">
             <a
               target="_blank"
-              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Resumev1.pdf"
+              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Jonathan+Christensen+Resume.pdf"
               download="Jonathan Christensen Resume"
             >
               DOWNLOAD CV
@@ -71,7 +69,10 @@ const Side = () => {
             >
               <BiLogoLinkedin />
             </a>
-            <a href="mailto: jon@jonathanchristensen.com" className="social-icon email">
+            <a
+              href="mailto: jon@jonathanchristensen.com"
+              className="social-icon email"
+            >
               <AiOutlineMail />
             </a>
           </div>

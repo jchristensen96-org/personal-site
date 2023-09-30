@@ -12,13 +12,13 @@ const Resume = () => (
         <Side />
       </div>
       <div className="page-card resume-card">
-        <div className="title">
+        <div className="title resume-title">
           <h2>RESUME</h2>
           <p>EXPERIENCE . EDUCATION . CERTIFICATIONS</p>
         </div>
         <hr className="page-divide" />
         <div className="resume-content">
-          <div className="resume-experience">
+          <div className="resume-experience resume-headings">
             <h2>WORK EXPERIENCE</h2>
             <h3>DELTA MODTECH - IT SPECIALIST</h3>
             <p className="experience-date">March 2021 – Present</p>
@@ -71,7 +71,7 @@ const Resume = () => (
                 </ul>
               </li>
             </ul>
-            <h3>MARQUIS YACHTS - NETWORK ADMINISTRATOR</h3>
+            <h3 className="experience-heading">MARQUIS YACHTS - NETWORK ADMINISTRATOR</h3>
             <p className="experience-date">June 2020 – March 2021</p>
             <p className="experience-company">
               Marquis Yachts was a yacht manufacturing company designing and
@@ -92,26 +92,26 @@ const Resume = () => (
               </li>
             </ul>
           </div>
-          <div className="resume-education">
+          <div className="resume-education resume-headings">
             <h2>EDUCATION</h2>
             <p className="education-degree">
               B.S. Information Technology, Application and Database Development
             </p>
             <p className="education-school">Liberty University, 2019</p>
           </div>
-          <div className="resume-certs">
+          <div className="resume-certs resume-headings">
             <h2>CERTIFICATIONS</h2>
-            <p>AWS Certified Solutions Architect - Professional</p>
-            <p>AWS Certified Solutions Architect - Associate </p>
-            <p>AWS Certified Developer - Associate</p>
-            <p>AWS Certified SysOps Administrator - Associate</p>
-            <p>Certified Kubernetes Administrator</p>
-            <p>Certified Kubernetes Application Developer</p>
-            <p>HashiCorp Certified: Terraform Associate</p>
-            <p>Cisco Certified Network Associate</p>
-            <p>CompTIA Advanced Security Practitioner</p>
-            <p>CompTIA CySA+</p>
-            <p>CompTIA Security+</p>
+            <div className="cert-link"><a href="https://www.credly.com/badges/916c9a26-28c4-403c-a02a-a0a692cc7230/linked_in_profile" target="_blank">AWS Certified Solutions Architect - Professional</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/8908c4ec-a215-41e2-b089-a61e681f3fd7/linked_in_profile" target="_blank">AWS Certified Solutions Architect - Associate </a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/058ada7b-c493-47d6-b73d-e12315d45585/linked_in_profile" target="_blank">AWS Certified Developer - Associate</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/1105da8f-214c-427c-97aa-f61756ee51f5/linked_in_profile" target="_blank">AWS Certified SysOps Administrator - Associate</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/bd100fb3-dfae-4a5f-b8a5-5379c2e9a1ca/linked_in_profile" target="_blank">Certified Kubernetes Administrator</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/90a06806-3eb7-4ff2-89f4-30c99ba77bd6/linked_in_profile" target="_blank">Certified Kubernetes Application Developer</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/0dd6106a-17da-41d3-a8ab-03f12f776508/linked_in_profile" target="_blank">HashiCorp Certified: Terraform Associate</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/e2f3ce36-9a27-435f-b042-fd1406232920/linked_in_profile" target="_blank">CCNA</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/2d246a09-1604-472d-b6be-6a92a7a2410a/linked_in_profile" target="_blank">CompTIA CASP+</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/10e6e836-144a-459f-97ee-624551a5b1ee/linked_in_profile" target="_blank">CompTIA CySA+</a></div>
+            <div className="cert-link"><a href="https://www.credly.com/badges/823b03dc-af0e-4896-81ae-b1ebd4a166a0/linked_in_profile" target="_blank">CompTIA Security+</a></div>
           </div>
         </div>
       </div>

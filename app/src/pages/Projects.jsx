@@ -29,7 +29,7 @@ const Projects = () => (
           </div>
           <div className="project-container">
             <div className="project-title-container">
-              <a href="https://github.com/jchristensen96-org/personal-site" target="_blank"><h3>DEVOPS PROJECT 2: (This site)</h3></a>
+              <a href="https://github.com/jchristensen96-org/personal-site" target="_blank"><h3>Personal Site: Built and deployed via GitHub Actions to AWS S3</h3></a>
               <p>September 2023</p>
             </div>
             <div className="project-image-container">

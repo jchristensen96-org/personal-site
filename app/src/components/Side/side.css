@@ -85,7 +85,7 @@
 
 .side-body-about {
   padding: 25px;
-  padding-bottom: 40px;
+  padding-bottom: 25px;
 }
 
 .side-body-about h3 {
@@ -104,20 +104,6 @@
   font-size: 1rem;
   letter-spacing: 0.04rem;
   line-height: 1.7;
-  margin-bottom: 30px;
-}
-
-.side-button {
-  font-size: 0.9rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.04rem;
-  text-decoration: none;
-  background-color: #ededed;
-  color: #202020;
-  padding: 13px 22px;
-  border: none;
-  transition: 0.2s;
 }
 
 .side-button:hover {
@@ -199,8 +185,6 @@
   }
 
   .side-header img {
-    width: 150px;
-    height: 150px;
     margin-top: 40px;
     margin-bottom: 20px;
   }
@@ -227,7 +211,7 @@
 
   .copyright {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .social-icon-container {
