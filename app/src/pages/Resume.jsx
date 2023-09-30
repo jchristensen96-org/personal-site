@@ -90,7 +90,6 @@ const Resume = () => (
           <div className="resume-certs">
             <h2>CERTIFICATIONS</h2>
             <p>AWS Certified Solutions Architect - Professional</p>
-            <p>AWS Certified DevOps Engineer - Professional</p>
             <p>AWS Certified Solutions Architect - Associate </p>
             <p>AWS Certified Developer - Associate</p>
             <p>AWS Certified SysOps Administrator - Associate</p>

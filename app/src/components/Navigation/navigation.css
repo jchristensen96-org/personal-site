@@ -2,7 +2,7 @@
   background-color: #758595;
   height: 70px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   font-size: 1rem;
   position: sticky;
@@ -10,13 +10,16 @@
   z-index: 20;
 }
 
+.page-container {
+  width: 1200px;
+}
+
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   margin-left: 50px;
-  height: 80px;
-  max-width: 1500px;
+  width: 100%;
 }
 
 .nav-logo {
@@ -28,7 +31,6 @@
   text-decoration: none;
   font-size: 1.1rem;
   letter-spacing: 0.15rem;
-  flex-grow: 1;
 }
 
 .nav-divide {

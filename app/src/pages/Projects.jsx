@@ -14,7 +14,7 @@ const Projects = () => (
       <div className="page-card project-card">
         <div className="title">
           <h2>PROJECTS</h2>
-          <p>A SELECTION OF PROJECTS THAT I'M NOT TOO ASHAMED OF</p>
+          <p>A SELECTION OF MY RECENT PROJECTS</p>
         </div>
         <hr className="page-divide" />
         <div className="project-content">

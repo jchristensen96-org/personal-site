@@ -111,21 +111,15 @@ jobs:
       - name: Build
         run: yarn build
 
-      # - name: Deploy
-      #   uses: jakejarvis/s3-sync-action@master
-      #   with:
-      #     args: --acl public-read --follow-symlinks --delete
-      #   env:
-      #     AWS_S3_BUCKET: ${{ secrets.ROOT_DOMAIN_NAME }}
-      #     AWS_ACCESS_KEY_ID: ${{ steps.creds.outputs.aws-access-key-id }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ steps.creds.outputs.aws-secret-access-key }}
-      #     AWS_REGION: ${{ vars.AWS_REGION }}
-      #     SOURCE_DIR: "./app/dist"
-
       - name: Deploy
         env:
           SOURCE_DIR: "./dist"
           AWS_S3_BUCKET: ${{ secrets.ROOT_DOMAIN_NAME }}
         run: |
-          ls
           aws s3 sync ${SOURCE_DIR} s3://${AWS_S3_BUCKET}/ --no-progress
+
+      - name: Invalidate Cache
+        env:
+          DISTRO_ID: ${{ secrets.CF_DISTRO_ID }}
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${DISTRO_ID} --paths "/*"

@@ -16,19 +16,17 @@ const Index = () => (
         <div className="title">
           <h2>ABOUT THIS SITE</h2>
           <p>
-            A BEAUTIFUL, RESPONSIVE, STATICALLY-GENERATED, REACT APPLICATION
-            WRITTEN WITH MODERN JAVASCRIPT.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
         <hr className="page-divide" />
         <div className="index-content">
           <p>
-            As an experienced IT specialist with a passion for DevOps, I
-            showcase my journey of transforming antiquated infrastructures,
-            implementing cutting-edge security solutions, and mastering a
-            diverse range of technologies. Explore my projects, certifications,
-            and expertise in creating CI/CD pipelines as I strive to make a
-            meaningful impact in the world of technology.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+          pariatur.
           </p>
           <div className="index-links">
             <Link className="index-link" to="/resume">VIEW RESUME</Link>
