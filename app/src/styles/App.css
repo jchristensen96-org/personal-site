@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+#root {
+  overflow: hidden;
+}
+
 .page {
   min-height: 100vh;
   background-color: #d9d9d9;
@@ -98,22 +102,6 @@
   color: #202020;
 }
 
-.index-links {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-.index-link {
-  font-size: 0.7rem;
-  font-family: Inter;
-  font-weight: 400;
-  text-decoration: none;
-  background-color: #758595;
-  color: #fff;
-  padding: 14px 28px 14px 28px;
-  margin-right: 10px;
-}
-
 /* RESUME */
 
 .resume-content {
@@ -135,20 +123,20 @@
   font-family: 'Trirong', serif;
   font-weight: 400;
   color: #383838;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .resume-experience h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: Inter;
   font-weight: 600;
   color: #383838;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
 .experience-date {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: Inter;
   font-weight: 300;
   color: #383838;
@@ -157,10 +145,12 @@
 }
 
 .experience-company {
-  line-height: 1.4;
+  line-height: 1.5;
+  font-size: 1.1rem;
   font-weight: 300;
   color: #000000;
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1px;
 }
 
 .resume-content ul li {
@@ -170,6 +160,9 @@
   font-weight: 300;
   color: #000000;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1px;
+  line-height: 1.2;
 }
 
 /* RESUME EDUCATION */
@@ -188,11 +181,13 @@
   font-weight: 400;
   margin-top: 20px;
   margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 .education-school {
   color: #383838;
   font-weight: 300;
   opacity: 70%;
+  font-size: 1.1rem;
 }
 
 /* RESUME CERTS */
@@ -357,9 +352,10 @@
 }
 
 @media screen and (max-width: 1280px) {
+
   .main-content {
     flex-direction: column;
-    max-width: none;
+    max-width: 80%;
   }
 
   .side-component {
@@ -368,7 +364,7 @@
   }
 
   .contact-card {
-    width: calc(100% - 40px); /* Account for left and right margins */
+    width: calc(100% - 40px);
     margin: 20px;
   }
 
@@ -388,28 +384,33 @@
   }
 }
 
+@media screen and (max-width: 980px) {
+  .main-content {
+    max-width: 95vw;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  .page-card {
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
   .title {
     padding-bottom: 15px;
+    text-align: center;
   }
 
   .title h2 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
-  .title p {
-    font-size: 0.8rem;
+  .title p,
+  .title p a {
+    font-size: 1rem;
   }
-
-  .index-content p {
-    font-size: 0.9rem;
-  }
-
-  .index-links {
-    margin-top: 40px;
-    margin-bottom: 30px;
-  }
-
+  
   /* CONTACT */
 
   .contact-title {
@@ -422,26 +423,6 @@
     text-align: center;
     padding: 20px;
     padding-top: 50px;
-  }
-
-  .index-content {
-    padding: 20px;
-  }
-
-  .index-links {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  .index-link {
-    font-size: 0.7rem;
-    padding: 10px 20px 10px 20px;
-    margin-right: 10px;
-  }
-
-  .index-content {
-    text-align: center;
   }
 
   /* RESUME */
@@ -522,20 +503,12 @@
 
 @media screen and (max-width: 340px) {
   .title h2 {
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
 
-  .title p {
-    font-size: 0.7rem;
-  }
-
-  .index-content p {
-    font-size: 0.8rem;
-  }
-
-  .index-link {
-    font-size: 0.6rem;
-    padding: 8px 16px 8px 16px;
+  .title p,
+  .title p a {
+    font-size: 1rem;
   }
 
   .page-card {

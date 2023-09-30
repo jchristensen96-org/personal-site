@@ -195,7 +195,6 @@
     margin-top: 20px;
     overflow: hidden;
     border-radius: 8px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
   }
 
   .side-header img {
@@ -229,12 +228,13 @@
     text-align: center;
     margin-bottom: 15px;
   }
+
+  .social-icon-container {
+    margin-left: 50px;
+  }
 }
 
 @media screen and (max-width: 980px) {
-  .side-header-name {
-    font-size: 1.5rem;
-  }
 
   .side-body-info table {
     margin: 0 auto;
@@ -270,6 +270,11 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .social-icon-container {
+    margin-left: 0;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 430px) {
@@ -287,12 +292,8 @@
     border-radius: 0;
   }
 
-  .side-header-name {
-    font-size: 1.2rem;
-  }
-
   .side-header-email {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .side-body-about p {

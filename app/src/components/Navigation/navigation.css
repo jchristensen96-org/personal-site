@@ -103,9 +103,9 @@
     margin-left: 0px;
   }
 
-  .nav-logo {
-    font-size: 0.9rem;
-  }
+  /* .nav-logo {
+    font-size: 1rem;
+  } */
 
   .nav-divide {
     display: none;
@@ -120,6 +120,8 @@
     justify-content: flex-end; /* Push the hamburger menu to the right side */
     position: absolute; /* Add this line */
     right: 0; /* Add this line to align the menu to the right */
+    -webkit-overflow-scrolling: auto;
+    overflow: hidden;
   }
 
   .hamburger {
@@ -219,7 +221,7 @@
 
 @media screen and (max-width: 340px) {
   .nav-logo {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .navbar {
