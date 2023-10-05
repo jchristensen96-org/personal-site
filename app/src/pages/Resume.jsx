@@ -14,7 +14,7 @@ const Resume = () => (
       <div className="page-card resume-card">
         <div className="title resume-title">
           <h2>RESUME</h2>
-          <p><AnchorLink offset='70' href="#experience">EXPERIENCE</AnchorLink> . <AnchorLink href="#education">EDUCATION</AnchorLink> . <AnchorLink href="#certs">CERTIFICATIONS</AnchorLink></p>
+          <p><AnchorLink offset='70' href="#experience">EXPERIENCE</AnchorLink> . <AnchorLink offset='70' href="#education">EDUCATION</AnchorLink> . <AnchorLink offset='70' href="#certs">CERTIFICATIONS</AnchorLink></p>
         </div>
         <hr id="experience" className="page-divide" />
         <div className="resume-content">

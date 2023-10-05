@@ -11,7 +11,8 @@ const NotFound = () => (
           <h1>404</h1>
         </div>
         <div className="subtitle-404">
-          <p>Sorry! That page doesn't exist.</p>
+          {/* <p>Sorry! That page doesn't exist.</p> */}
+          <p>:(</p>
         </div>
         <div className="home-btn-404">
           <Link className="link-404" to="/">RETURN HOME</Link>
