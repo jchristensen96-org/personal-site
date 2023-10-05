@@ -32,7 +32,7 @@ const Projects = () => (
             </div>
             <div className="project-image-container">
               <a href="https://gitlab.com/jdchristensen/aws-eks-deployment" target="_blank"><img
-                src="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/9Aettr7ENFg8fEVjtJ.png"
+                src="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/9Aettr7ENFg8fEVjtJ.jpg"
               /></a>
             </div>
           </div>
