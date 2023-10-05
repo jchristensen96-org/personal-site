@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,15 +6,18 @@
   font-family: sans-serif;
 }
 
+/* Root Element Styles */
 #root {
   overflow: clip;
 }
 
+/* Page Styles */
 .page {
   min-height: 100vh;
   background-color: #d9d9d9;
 }
 
+/* Main Content Styles */
 .main-content {
   display: flex;
   flex-wrap: wrap;
@@ -26,6 +30,7 @@
   margin-right: 20px;
 }
 
+/* Page Card Styles */
 .page-card {
   background-color: #ffffffd4;
   margin-top: 50px;
@@ -43,27 +48,24 @@
   margin-bottom: 40px;
 }
 
+/* Title Styles */
 .title {
   padding: 40px;
+  text-align: left;
 }
 
 .title h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   letter-spacing: 0.3px;
-  font-weight: 6700;
   font-size: 3.5rem;
   margin-bottom: 15px;
 }
 
-.title p,
-.title p a {
-  font-family: "Merriweather", serif;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  letter-spacing: 0.3px;
-  font-weight: 300;
+.title p, .title p a {
+  font: 300 1.15rem/1.7 "Merriweather", serif;
   color: black;
+  letter-spacing: 0.3px;
 }
 
 .title p a {
@@ -78,17 +80,18 @@
   border-bottom: 1px solid #758595;
 }
 
-.title p a:visited,
-.title p a:active {
+.title p a:visited, .title p a:active {
   color: black;
 }
 
+/* Page Divide Styles */
 .page-divide {
   margin-right: 40px;
   margin-left: 40px;
   opacity: 40%;
 }
 
+/* Index Content Styles */
 .index-content {
   padding: 50px;
   padding-top: 30px;
@@ -102,21 +105,18 @@
   color: #202020;
 }
 
-/* RESUME */
-
+/* Resume Styles */
 .resume-content {
   padding: 50px;
   padding-top: 30px;
   font-family: Inter;
 }
 
-.resume-card,
-.project-card {
+.resume-card, .project-card {
   margin-bottom: 40px;
 }
 
-/* RESUME EXPERIENCE */
-
+/* Resume Experience Styles */
 .resume-experience h2 {
   text-align: center;
   font-size: 1.5rem;
@@ -180,8 +180,7 @@
   line-height: 1.2;
 }
 
-/* RESUME EDUCATION */
-
+/* Resume Education Styles */
 .resume-education h2 {
   text-align: center;
   font-size: 1.5rem;
@@ -198,6 +197,7 @@
   margin-bottom: 5px;
   font-size: 1.1rem;
 }
+
 .education-school {
   color: #383838;
   font-weight: 300;
@@ -205,8 +205,7 @@
   font-size: 1.1rem;
 }
 
-/* RESUME CERTS */
-
+/* Resume Certs Styles */
 .resume-certs h2 {
   text-align: center;
   font-size: 1.5rem;
@@ -235,8 +234,7 @@
   border-bottom: 0.7px solid black;
 }
 
-/* PROJECTS */
-
+/* Projects Styles */
 .project-content {
   padding-bottom: 50px;
   display: flex;
@@ -259,22 +257,26 @@
 
 .project-title-container h3 {
   margin-left: 20px;
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: #383838;
+
 }
 
 .project-title-container a {
   text-decoration: none;
 }
 
-.project-title-container a h3:hover {
-  color: #527292;
+.project-title-container a h3 span {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #383838;
+  transition: 0.3s;
+  text-decoration: none;
+  border-bottom: 0.7px solid #52729200;
 }
 
 .project-title-container a h3 span:hover {
+  color: #527292;
   border-bottom: 0.7px solid #527292;
 }
 
@@ -291,73 +293,12 @@
   margin-right: 15px;
   margin-left: 15px;
   position: relative;
-}
-
-.project-overlay {
-  inset: 0;
-  background-color: #00000000;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
+  opacity: 100%;
   transition: 0.4s;
-  margin-bottom: 3px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-.project-overlay h3 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.project-overlay ul  {
-  margin-bottom: 20px;
-}
-
-.project-overlay ul li {
-  margin-bottom: 5px;
-  font-size: 1.3rem;
-}
-
-.project-overlay h3,
-.project-overlay ul li,
-.project-overlay a {
-  color: rgba(255, 255, 255, 0);
-  transition: 0.4s;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-}
-
-.project-overlay a {
-  text-decoration: none;
-  background-color: #00000000;
-  padding: 13px 20px;
-  font-size: 1.2rem;
-}
-
-.project-overlay a:hover {
-  background-color: rgb(233, 233, 233);
-}
-
-.project-image-container:hover .project-overlay h3,
-.project-image-container:hover .project-overlay ul li {
-  color: rgb(0, 0, 0);
-}
-
-.project-image-container:hover .project-overlay a {
-  background-color: white;
-  color: rgb(24, 14, 59);
-  transition: 0.3s;
-}
-
-.project-image-container:hover .project-overlay a:hover {
-  background-color: rgba(255, 255, 255, 0.646);
-}
-
-.project-image-container:hover .project-overlay {
-  background-color: #232323ee;
+.project-image-container:hover {
+  opacity: 60%;
 }
 
 .project-image-container img {
@@ -367,8 +308,7 @@
   border-left: 1px solid rgba(0, 0, 0, 0.26);
 }
 
-/* 404 */
-
+/* 404 Styles */
 .card-404 {
   margin: 0;
   position: absolute;
@@ -406,6 +346,7 @@
   padding: 14px 28px 14px 28px;
 }
 
+/* Contact Styles */
 .contact-title {
   margin-bottom: 0;
   padding-bottom: 40px;
@@ -453,16 +394,6 @@
   color: #000000;
 }
 
-/* Carosoul */
-
-.carousel .control-next.control-arrow {
-  color: black !important;
-}
-
-.carousel .control-prev.control-arrow:before {
-  color: black !important;
-}
-
 @media screen and (max-width: 1280px) {
   .main-content {
     flex-direction: column;
@@ -475,8 +406,8 @@
     margin-right: 0;
   }
 
-  .contact-card,
-  .page-card {
+  /* Combine the following styles */
+  .contact-card, .page-card {
     width: 100% !important;
     margin-left: 0;
     margin-right: 0;
@@ -492,8 +423,7 @@
     justify-content: center;
   }
 
-  /* CONTACT */
-
+  /* Contact Styles */
   .contact-title {
     padding-bottom: 5px;
   }
@@ -504,13 +434,8 @@
     max-width: 90vw;
   }
 
-  .page-card {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-bottom: 10px;
-  }
-
-  .side-component {
+  /* Combine the following styles */
+  .page-card, .side-component {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -522,6 +447,7 @@
 }
 
 @media screen and (max-width: 700px) {
+  /* Combine the following styles */
   .resume-content {
     padding-left: 20px;
     padding-right: 20px;
@@ -532,7 +458,6 @@
   .page-card {
     margin-top: 30px;
     padding-top: 30px;
-    /* padding-bottom: 30px; */
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -546,8 +471,7 @@
     font-size: 2.5rem;
   }
 
-  .title p,
-  .title p a {
+  .title p, .title p a {
     font-size: 1rem;
   }
 
@@ -563,8 +487,7 @@
     font-size: 1rem;
   }
 
-  /* CONTACT */
-
+  /* Contact Styles */
   .contact-title {
     margin-bottom: 0;
   }
@@ -575,14 +498,7 @@
 }
 
 @media screen and (max-width: 430px) {
-  .title {
-    text-align: center;
-    padding: 20px;
-    padding-top: 50px;
-  }
-
-  /* RESUME */
-
+  /* Combine the following styles */
   .resume-content {
     padding: 20px;
   }
@@ -602,8 +518,7 @@
     font-size: 0.9rem;
   }
 
-  /* RESUME EDUCATION */
-
+  /* Resume Education Styles */
   .resume-education h2 {
     font-size: 1.2rem;
     margin-top: 40px;
@@ -616,8 +531,7 @@
     font-size: 1rem;
   }
 
-  /* RESUME CERTS */
-
+  /* Resume Certs Styles */
   .resume-certs h2 {
     font-size: 1.2rem;
     margin-top: 40px;
@@ -627,14 +541,12 @@
     font-size: 0.75rem;
   }
 
-  /* PROJECTS */
-
+  /* Projects Styles */
   .project-title-container h3 {
     font-size: 0.9rem;
   }
 
-  /* CONTACT */
-
+  /* Contact Styles */
   .contact-title {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -664,8 +576,7 @@
     font-size: 2rem;
   }
 
-  .title p,
-  .title p a {
+  .title p, .title p a {
     font-size: 1rem;
   }
 
@@ -690,8 +601,7 @@
 }
 
 @media screen and (max-width: 290px) {
-  /* PROJECTS */
-
+  /* Projects Styles */
   .project-title-container h3 {
     font-size: 0.7rem;
   }
