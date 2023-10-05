@@ -175,10 +175,14 @@ resource "aws_route53_record" "root" {
 
 resource "aws_route53_record" "www" {
   name    = "www"
-  type    = "CNAME"
-  ttl     = 300
+  type    = "A"
   zone_id = aws_route53_zone.this.zone_id
-  records = [aws_s3_bucket_website_configuration.root.website_endpoint]
+
+  alias {
+    name                   = aws_route53_record.root.name
+    zone_id                = aws_route53_zone.this.zone_id
+    evaluate_target_health = false
+  }
 }
 
 #####################
@@ -246,7 +250,7 @@ resource "aws_cloudfront_distribution" "root" {
     ssl_support_method  = "sni-only"
   }
 
-  aliases = [var.domain_name]
+  aliases = [var.domain_name, var.www_domain_name]
 
   price_class = "PriceClass_200"
 
