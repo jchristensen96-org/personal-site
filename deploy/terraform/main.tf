@@ -87,7 +87,7 @@ resource "aws_s3_bucket_acl" "www" {
     aws_s3_bucket_public_access_block.www,
   ]
 
-  bucket = aws_s3_bucket.root.id
+  bucket = aws_s3_bucket.www.id
   acl    = "public-read"
 }
 
@@ -246,7 +246,7 @@ resource "aws_cloudfront_distribution" "root" {
     ssl_support_method  = "sni-only"
   }
 
-  aliases = [var.domain_name, var.www_domain_name]
+  aliases = [var.domain_name]
 
   price_class = "PriceClass_200"
 
