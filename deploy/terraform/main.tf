@@ -8,10 +8,6 @@ resource "aws_s3_bucket" "root" {
   bucket = var.domain_name
 }
 
-resource "aws_s3_bucket" "www" {
-  bucket = var.www_domain_name
-}
-
 # S3 Website Configuration Resources
 
 resource "aws_s3_bucket_website_configuration" "root" {
@@ -23,15 +19,6 @@ resource "aws_s3_bucket_website_configuration" "root" {
 
   error_document {
     key = "index.html"
-  }
-}
-
-resource "aws_s3_bucket_website_configuration" "www" {
-  bucket = aws_s3_bucket.www.id
-
-  redirect_all_requests_to {
-    host_name = var.domain_name
-    protocol  = "http"
   }
 }
 
@@ -63,34 +50,6 @@ resource "aws_s3_bucket_acl" "root" {
   acl    = "public-read"
 }
 
-# WWW bucket ACL/Public Access/Ownership Controls
-
-resource "aws_s3_bucket_ownership_controls" "www" {
-  bucket = aws_s3_bucket.www.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_public_access_block" "www" {
-  bucket = aws_s3_bucket.www.id
-
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_bucket_acl" "www" {
-  depends_on = [
-    aws_s3_bucket_ownership_controls.www,
-    aws_s3_bucket_public_access_block.www,
-  ]
-
-  bucket = aws_s3_bucket.www.id
-  acl    = "public-read"
-}
-
 # Bucket Policies
 
 resource "aws_s3_bucket_policy" "root" {
@@ -118,28 +77,6 @@ data "aws_iam_policy_document" "root" {
       variable = "AWS:SourceArn"
       values   = ["arn:aws:cloudfront::439051019257:distribution/E3NRJB7331HKQI"]
     }
-  }
-}
-
-resource "aws_s3_bucket_policy" "www" {
-  bucket = aws_s3_bucket.www.id
-  policy = data.aws_iam_policy_document.www.json
-}
-
-data "aws_iam_policy_document" "www" {
-  statement {
-    principals {
-      type        = "*"
-      identifiers = ["*"]
-    }
-
-    actions = [
-      "s3:GetObject",
-    ]
-
-    resources = [
-      "${aws_s3_bucket.www.arn}/*",
-    ]
   }
 }
 
