@@ -10,7 +10,7 @@ The website uses Github Actions to automate the deployment after updates are com
 
 ## Infrastructure
 
-All the resources needed for the website are created during the deployment except the domain name. The resources include: S3 buckets + S3 website/security configurations, a Cloudfront distribution, an ACM certificate for TLS, and the proper Route 53 records to provide name resolution.
+All the resources needed for the website are created during the deployment except the domain name. The resources include: a S3 bucket + S3 website/security configurations, a Cloudfront distribution, an ACM certificate for TLS, and the proper Route 53 records to provide name resolution.
 
 ## Building
 
