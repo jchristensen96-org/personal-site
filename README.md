@@ -2,7 +2,7 @@
 
 See: [jonathanchristensen.com](https://jonathanchristensen.com)
 
-My personal website. I used ReactJS + [Vite]("https://vitejs.dev/") to put this website together. It's main purpose is to host an updated copy of my resume and recent projects.
+My personal website. This is a very simple static site created using ReactJS + [Vite](https://vitejs.dev/). It's main purpose is to host an updated copy of my resume and recent projects.
 
 ## Deployment
 
