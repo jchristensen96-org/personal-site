@@ -7,7 +7,8 @@
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 100;
+  width: 100%;
 }
 
 .page-container {
@@ -29,7 +30,7 @@
   align-items: center;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.12rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0);
   transition: 0.1s;
@@ -111,15 +112,15 @@
     flex-grow: 1;
   }
 
+  .menu-container {
+    margin-top: 200px;
+  }
+
   .nav-container {
     position: relative;
     width: 100%;
     margin-left: 0px;
   }
-
-  /* .nav-logo {
-    font-size: 1rem;
-  } */
 
   .nav-divide {
     display: none;
@@ -131,10 +132,10 @@
 
   .hamburger-menu {
     display: flex;
-    justify-content: flex-end; /* Push the hamburger menu to the right side */
-    position: absolute; /* Add this line */
-    right: 0; /* Add this line to align the menu to the right */
-    overflow: hidden;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    overflow: clip;
   }
 
   .hamburger {
@@ -170,20 +171,6 @@
     margin-top: 20vh;
   }
 
-  .menu-logo {
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-    font-weight: 400;
-    align-items: center;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 150%;
-    letter-spacing: 0.15rem;
-    flex-grow: 1;
-    margin-left: 30px;
-    padding-bottom: 20px;
-  }
-
   .menu-container {
     list-style: none;
     text-align: left;
@@ -193,7 +180,7 @@
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-decoration: none;
     margin-left: 30px;
     height: 100%;
@@ -222,7 +209,7 @@
   }
 
   .menu-links {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin-left: 45px;
   }
 

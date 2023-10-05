@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import "../styles/App.css";
 import Navigation from "../components/Navigation/Navigation";
 import Side from "../components/Side/Side";
@@ -14,9 +14,9 @@ const Resume = () => (
       <div className="page-card resume-card">
         <div className="title resume-title">
           <h2>RESUME</h2>
-          <p>EXPERIENCE . EDUCATION . CERTIFICATIONS</p>
+          <p><AnchorLink offset='70' href="#experience">EXPERIENCE</AnchorLink> . <AnchorLink href="#education">EDUCATION</AnchorLink> . <AnchorLink href="#certs">CERTIFICATIONS</AnchorLink></p>
         </div>
-        <hr className="page-divide" />
+        <hr id="experience" className="page-divide" />
         <div className="resume-content">
           <div className="resume-experience resume-headings">
             <h2>WORK EXPERIENCE</h2>
@@ -93,14 +93,14 @@ const Resume = () => (
             </ul>
           </div>
           <div className="resume-education resume-headings">
-            <h2>EDUCATION</h2>
+            <h2 id="education">EDUCATION</h2>
             <p className="education-degree">
               B.S. Information Technology, Application and Database Development
             </p>
             <p className="education-school">Liberty University, 2019</p>
           </div>
           <div className="resume-certs resume-headings">
-            <h2>CERTIFICATIONS</h2>
+            <h2 id="certs">CERTIFICATIONS</h2>
             <div className="cert-link"><a href="https://www.credly.com/badges/916c9a26-28c4-403c-a02a-a0a692cc7230/linked_in_profile" target="_blank">AWS Certified Solutions Architect - Professional</a></div>
             <div className="cert-link"><a href="https://www.credly.com/badges/8908c4ec-a215-41e2-b089-a61e681f3fd7/linked_in_profile" target="_blank">AWS Certified Solutions Architect - Associate </a></div>
             <div className="cert-link"><a href="https://www.credly.com/badges/058ada7b-c493-47d6-b73d-e12315d45585/linked_in_profile" target="_blank">AWS Certified Developer - Associate</a></div>

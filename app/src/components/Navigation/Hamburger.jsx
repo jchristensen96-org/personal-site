@@ -11,21 +11,6 @@ const Hamburger = ({ isOpen }) => {
         <div className="burger burger3" />
       </div>
       <div className={`side-menu-container ${isOpen ? "open" : ""}`}>
-        <div className="menu-logo-container">
-          <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-              isPending
-                ? "menu-logo pending"
-                : isActive
-                ? "menu-logo active"
-                : "menu-logo"
-            }
-          >
-            JON CHRISTENSEN
-          </NavLink>
-        </div>
-        <hr className="menu-divide" />
         <ul className="menu-container">
           <li className="menu-item">
             <NavLink

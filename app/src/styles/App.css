@@ -6,7 +6,7 @@
 }
 
 #root {
-  overflow: hidden;
+  overflow: clip;
 }
 
 .page {
@@ -36,7 +36,7 @@
   border-radius: 8px;
   border: 1px solid rgba(146, 146, 146, 0.598);
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .copyright {
@@ -44,11 +44,11 @@
 }
 
 .title {
-  padding: 50px;
+  padding: 40px;
 }
 
 .title h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   letter-spacing: 0.3px;
   font-weight: 6700;
@@ -58,7 +58,7 @@
 
 .title p,
 .title p a {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.7;
   letter-spacing: 0.3px;
@@ -73,7 +73,7 @@
 }
 
 .title p a:hover {
-  color: #758595 !important;;
+  color: #758595 !important;
   cursor: pointer;
   border-bottom: 1px solid #758595;
 }
@@ -120,7 +120,7 @@
 .resume-experience h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: 'Trirong', serif;
+  font-family: "Trirong", serif;
   font-weight: 400;
   color: #383838;
   margin-bottom: 20px;
@@ -128,11 +128,21 @@
 
 .resume-experience h3 {
   font-size: 1.2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: #383838;
   margin-top: 20px;
   margin-bottom: 5px;
+}
+
+.resume-title p a {
+  text-decoration: none;
+  border-bottom: 1px solid #75859500 !important;
+  transition: 0.3s;
+}
+
+.resume-title p a:hover {
+  border-bottom: 1px solid #758595 !important;
 }
 
 .experience-heading {
@@ -141,7 +151,7 @@
 
 .experience-date {
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #383838;
   opacity: 50%;
@@ -152,9 +162,9 @@
   line-height: 1.5;
   font-size: 1.1rem;
   font-weight: 200;
-  color: #0000008e;
+  color: #000000c4;
   letter-spacing: 0.1px;
-  font-family: 'Trirong', serif;
+  font-family: "Trirong", serif;
   font-style: italic;
 }
 
@@ -164,7 +174,7 @@
   margin-right: 30px;
   font-weight: 300;
   color: #000000;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.1px;
   line-height: 1.2;
@@ -175,7 +185,7 @@
 .resume-education h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: 'Trirong', serif;
+  font-family: "Trirong", serif;
   font-weight: 400;
   color: #383838;
   margin-top: 50px;
@@ -200,7 +210,7 @@
 .resume-certs h2 {
   text-align: center;
   font-size: 1.5rem;
-  font-family: 'Trirong', serif;
+  font-family: "Trirong", serif;
   font-weight: 400;
   color: #383838;
   margin-top: 50px;
@@ -214,7 +224,7 @@
 .cert-link a {
   font-weight: 400;
   color: #000000;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.05rem;
   text-decoration: none;
   border-bottom: 0.7px solid rgba(0, 0, 0, 0);
@@ -250,7 +260,7 @@
 .project-title-container h3 {
   margin-left: 20px;
   font-size: 1rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   color: #383838;
@@ -261,7 +271,11 @@
 }
 
 .project-title-container a h3:hover {
-  color: #758595;
+  color: #527292;
+}
+
+.project-title-container a h3 span:hover {
+  border-bottom: 0.7px solid #527292;
 }
 
 .project-title-container p {
@@ -276,13 +290,81 @@
 .project-image-container {
   margin-right: 15px;
   margin-left: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-  border-right: 1px solid rgba(0, 0, 0, 0.26);
-  border-left: 1px solid rgba(0, 0, 0, 0.26);
+  position: relative;
+}
+
+.project-overlay {
+  inset: 0;
+  background-color: #00000000;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+  margin-bottom: 3px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.project-overlay h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.project-overlay ul  {
+  margin-bottom: 20px;
+}
+
+.project-overlay ul li {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.project-overlay h3,
+.project-overlay ul li,
+.project-overlay a {
+  color: rgba(255, 255, 255, 0);
+  transition: 0.4s;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.project-overlay a {
+  text-decoration: none;
+  background-color: #00000000;
+  padding: 13px 20px;
+  font-size: 1.2rem;
+}
+
+.project-overlay a:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.project-image-container:hover .project-overlay h3,
+.project-image-container:hover .project-overlay ul li {
+  color: rgb(0, 0, 0);
+}
+
+.project-image-container:hover .project-overlay a {
+  background-color: white;
+  color: rgb(24, 14, 59);
+  transition: 0.3s;
+}
+
+.project-image-container:hover .project-overlay a:hover {
+  background-color: rgba(255, 255, 255, 0.646);
+}
+
+.project-image-container:hover .project-overlay {
+  background-color: #232323ee;
 }
 
 .project-image-container img {
   max-width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+  border-right: 1px solid rgba(0, 0, 0, 0.26);
+  border-left: 1px solid rgba(0, 0, 0, 0.26);
 }
 
 /* 404 */
@@ -315,7 +397,7 @@
   margin-top: 50px;
 }
 
-.link-404{
+.link-404 {
   font-family: Inter;
   font-weight: 600;
   text-decoration: none;
@@ -330,7 +412,7 @@
 }
 
 .contact-content p {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.7;
   letter-spacing: 0.3px;
@@ -338,7 +420,7 @@
 }
 
 .contact-email {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 1.15rem;
   line-height: 1.7;
   letter-spacing: 0.3px;
@@ -368,11 +450,20 @@
 }
 
 .contact-icon:hover {
-  color:#000000;
+  color: #000000;
+}
+
+/* Carosoul */
+
+.carousel .control-next.control-arrow {
+  color: black !important;
+}
+
+.carousel .control-prev.control-arrow:before {
+  color: black !important;
 }
 
 @media screen and (max-width: 1280px) {
-
   .main-content {
     flex-direction: column;
     max-width: 80%;
@@ -416,6 +507,7 @@
   .page-card {
     margin-left: 0 !important;
     margin-right: 0 !important;
+    padding-bottom: 10px;
   }
 
   .side-component {
@@ -437,15 +529,14 @@
 }
 
 @media screen and (max-width: 480px) {
-
   .page-card {
     margin-top: 30px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  
+
   .title {
     padding-bottom: 15px;
     text-align: center;
@@ -464,14 +555,14 @@
     font-size: 1.3rem;
   }
 
-  .resume-headings h2{
+  .resume-headings h2 {
     font-size: 1.2rem;
   }
 
-  .resume-headings h3{
+  .resume-headings h3 {
     font-size: 1rem;
   }
-  
+
   /* CONTACT */
 
   .contact-title {
@@ -553,11 +644,9 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-
-
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 380px) {
   .resume-title p {
     font-size: 1rem;
   }
@@ -598,8 +687,6 @@
   .page-card {
     margin-top: 20px;
   }
-
-
 }
 
 @media screen and (max-width: 290px) {

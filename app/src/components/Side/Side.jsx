@@ -10,8 +10,7 @@ const Side = () => {
       <div className="side-container">
         <div className="side-header">
           <img
-            src="https://jc-ecom-app-images-209328912.s3.amazonaws.com/images/project/U8wQcYEnnEm3rEw6ZG.png"
-            alt=""
+            src="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/U8wQcYEnnEm3rEw6ZG.png"
           />
           <h3 className="side-header-name">JON CHRISTENSEN</h3>
           <a
