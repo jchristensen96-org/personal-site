@@ -12,32 +12,6 @@ resource "aws_s3_bucket" "www" {
   bucket = var.www_domain_name
 }
 
-resource "aws_s3_bucket_ownership_controls" "root" {
-  bucket = aws_s3_bucket.root.id
-  rule {
-    object_ownership = "BucketOwnerPreferred"
-  }
-}
-
-resource "aws_s3_bucket_public_access_block" "root" {
-  bucket = aws_s3_bucket.root.id
-
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_bucket_acl" "example" {
-  depends_on = [
-    aws_s3_bucket_ownership_controls.root,
-    aws_s3_bucket_public_access_block.root,
-  ]
-
-  bucket = aws_s3_bucket.root.id
-  acl    = "public-read"
-}
-
 # S3 Website Configuration Resources
 
 resource "aws_s3_bucket_website_configuration" "root" {
@@ -61,16 +35,74 @@ resource "aws_s3_bucket_website_configuration" "www" {
   }
 }
 
-resource "aws_s3_bucket_policy" "this" {
+# Root bucket ACL/Public Access/Ownership Controls
+
+resource "aws_s3_bucket_ownership_controls" "root" {
   bucket = aws_s3_bucket.root.id
-  policy = data.aws_iam_policy_document.this.json
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
 
-data "aws_iam_policy_document" "this" {
+resource "aws_s3_bucket_public_access_block" "root" {
+  bucket = aws_s3_bucket.root.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_acl" "root" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.root,
+    aws_s3_bucket_public_access_block.root,
+  ]
+
+  bucket = aws_s3_bucket.root.id
+  acl    = "public-read"
+}
+
+# WWW bucket ACL/Public Access/Ownership Controls
+
+resource "aws_s3_bucket_ownership_controls" "www" {
+  bucket = aws_s3_bucket.www.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "www" {
+  bucket = aws_s3_bucket.www.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_acl" "www" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.www,
+    aws_s3_bucket_public_access_block.www,
+  ]
+
+  bucket = aws_s3_bucket.root.id
+  acl    = "public-read"
+}
+
+# Bucket Policies
+
+resource "aws_s3_bucket_policy" "root" {
+  bucket = aws_s3_bucket.root.id
+  policy = data.aws_iam_policy_document.root.json
+}
+
+data "aws_iam_policy_document" "root" {
   statement {
     principals {
-      type        = "AWS"
-      identifiers = ["*"]
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
     }
 
     actions = [
@@ -79,6 +111,34 @@ data "aws_iam_policy_document" "this" {
 
     resources = [
       "${aws_s3_bucket.root.arn}/*",
+    ]
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = ["arn:aws:cloudfront::439051019257:distribution/E3NRJB7331HKQI"]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "www" {
+  bucket = aws_s3_bucket.www.id
+  policy = data.aws_iam_policy_document.www.json
+}
+
+data "aws_iam_policy_document" "www" {
+  statement {
+    principals {
+      type        = "*"
+      identifiers = ["*"]
+    }
+
+    actions = [
+      "s3:GetObject",
+    ]
+
+    resources = [
+      "${aws_s3_bucket.www.arn}/*",
     ]
   }
 }
@@ -112,16 +172,13 @@ resource "aws_route53_record" "root" {
   }
 }
 
+
 resource "aws_route53_record" "www" {
   name    = "www"
-  type    = "A"
+  type    = "CNAME"
+  ttl     = 300
   zone_id = aws_route53_zone.this.zone_id
-
-  alias {
-    name                   = aws_cloudfront_distribution.www.domain_name
-    zone_id                = aws_cloudfront_distribution.www.hosted_zone_id
-    evaluate_target_health = false
-  }
+  records = [aws_s3_bucket_website_configuration.root.website_endpoint]
 }
 
 #####################
@@ -159,7 +216,7 @@ resource "aws_route53_record" "validation" {
   zone_id         = aws_route53_zone.this.zone_id
 }
 
-# Create Validation Records
+# Create Validation Check
 
 resource "aws_acm_certificate_validation" "this" {
   certificate_arn         = aws_acm_certificate.root.arn
@@ -177,19 +234,21 @@ resource "aws_cloudfront_distribution" "root" {
     domain_name = aws_s3_bucket_website_configuration.root.website_endpoint
     origin_id   = var.domain_name
     custom_origin_config {
-      http_port = "80"
-      https_port = "443"
+      http_port              = "80"
+      https_port             = "443"
       origin_protocol_policy = "http-only"
-      origin_ssl_protocols = ["TLSv1", "TLSv1.1", "TLSv1.2"]
+      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
   }
 
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate.root.arn
-    ssl_support_method = "sni-only"
+    ssl_support_method  = "sni-only"
   }
 
-  aliases = [var.domain_name]
+  aliases = [var.domain_name, var.www_domain_name]
+
+  price_class = "PriceClass_200"
 
   restrictions {
     geo_restriction {
@@ -205,43 +264,5 @@ resource "aws_cloudfront_distribution" "root" {
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = var.domain_name
-  }
-}
-
-resource "aws_cloudfront_distribution" "www" {
-  enabled = true
-
-  origin {
-    domain_name = aws_s3_bucket_website_configuration.www.website_endpoint
-    origin_id   = var.www_domain_name
-    custom_origin_config {
-      http_port = "80"
-      https_port = "443"
-      origin_protocol_policy = "http-only"
-      origin_ssl_protocols = ["TLSv1", "TLSv1.1", "TLSv1.2"]
-    }
-  }
-
-  viewer_certificate {
-    acm_certificate_arn = aws_acm_certificate.root.arn
-    ssl_support_method = "sni-only"
-  }
-
-  aliases = [var.www_domain_name]
-
-  restrictions {
-    geo_restriction {
-      restriction_type = "none"
-      locations        = []
-    }
-  }
-
-  default_cache_behavior {
-    cache_policy_id        = "658327ea-f89d-4fab-a63d-7e88639e58f6"
-    viewer_protocol_policy = "redirect-to-https"
-    compress               = true
-    allowed_methods        = ["GET", "HEAD", "OPTIONS"]
-    cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = var.www_domain_name
   }
 }
