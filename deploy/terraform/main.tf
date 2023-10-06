@@ -59,10 +59,7 @@ resource "aws_s3_bucket_policy" "root" {
 
 data "aws_iam_policy_document" "root" {
   statement {
-    principals {
-      type        = "Service"
-      identifiers = ["cloudfront.amazonaws.com"]
-    }
+    principals "*"
 
     actions = [
       "s3:GetObject",
@@ -71,12 +68,6 @@ data "aws_iam_policy_document" "root" {
     resources = [
       "${aws_s3_bucket.root.arn}/*",
     ]
-
-    condition {
-      test     = "StringEquals"
-      variable = "AWS:SourceArn"
-      values   = ["arn:aws:cloudfront::439051019257:distribution/E3NRJB7331HKQI"]
-    }
   }
 }
 
