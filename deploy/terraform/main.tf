@@ -59,7 +59,9 @@ resource "aws_s3_bucket_policy" "root" {
 
 data "aws_iam_policy_document" "root" {
   statement {
-    principals "*"
+    principals {
+      identifiers = ["*"]
+    }
 
     actions = [
       "s3:GetObject",
