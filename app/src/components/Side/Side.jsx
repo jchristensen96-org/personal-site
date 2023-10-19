@@ -54,7 +54,7 @@ const Side = () => {
           <div className="side-download-cv">
             <a
               target="_blank"
-              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Jonathan+Christensen+Resume.pdf"
+              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Jonathan+Christensen+Resume+1.pdf"
               download="Jonathan Christensen Resume"
             >
               DOWNLOAD CV
