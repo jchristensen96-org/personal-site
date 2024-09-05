@@ -9,9 +9,7 @@ const Side = () => {
     <div>
       <div className="side-container">
         <div className="side-header">
-          <img
-            src="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/U8wQcYEnnEm3rEw6ZG.png"
-          />
+          <img src="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/U8wQcYEnnEm3rEw6ZG.png" />
           <h3 className="side-header-name">JON CHRISTENSEN</h3>
           <a
             href="mailto: jon@jonathanchristensen.com"
@@ -30,11 +28,11 @@ const Side = () => {
                 </tr>
                 <tr>
                   <td className="info-category">CURRENT CITY</td>
-                  <td className="info-info">MINNEAPOLIS</td>
+                  <td className="info-info">RALEIGH</td>
                 </tr>
                 <tr>
                   <td className="info-category">AGE</td>
-                  <td className="info-info">27</td>
+                  <td className="info-info">28</td>
                 </tr>
               </tbody>
             </table>
@@ -43,18 +41,18 @@ const Side = () => {
           <div className="side-body-about">
             <h3>ABOUT ME</h3>
             <p>
-              My name is Jon Christensen. I have 3+ years of experience working
-              as an IT administrator. I'm a passionate learner with diverse
-              interests ranging from technology and finance to film, philosophy,
-              religion, and history. When I'm not working or studying,
-              I enjoy doing anything with family and friends.
+              My name is Jon Christensen. I am an IT professional with 4 years
+              of experience and several certifications in cyber security,
+              networking, and AWS. I have a track record of delivering secure
+              and effective technology solutions and am committed to staying
+              ahead in the constantly evolving tech landscape.
             </p>
           </div>
           <hr className="side-divide" />
           <div className="side-download-cv">
             <a
               target="_blank"
-              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Jonathan+Christensen+Resume+1.pdf"
+              href="https://pa45hr9jsw59xva4txbdm2at88c55idp.s3.amazonaws.com/personal-site/Jonathan+Christensen+Resume.pdf"
               download="Jonathan Christensen Resume"
             >
               DOWNLOAD CV
