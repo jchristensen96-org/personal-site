@@ -39,7 +39,7 @@ const Resume = () => (
             <p className="experience-company">
               GAMA-1 Technologies provides development, engineering, security,
               implementation, and maintenance of IT solutions and services for
-              multiple Federal Government agencies."
+              multiple Federal Government agencies.
             </p>
             <ul>
               <li>
